@@ -12,6 +12,11 @@ export const Counter = () => {
     setItems((prevItems) => {
       return [...prevItems, { id: items.length, key: Math.random() }];
     });
+
+    // both of the logic works here but
+    // below may read the old value and 
+    // above line changes has not been added to ...items yet
+    setItems([...items, { id: items.length, key: Math.random() }])
   };
   return (
     <div>

@@ -4,6 +4,7 @@ import { Counter } from './state/Counter';
 import { PersonSalaray } from './state/Salary';
 import { EffectCounter } from './effect/Counter';
 import { AppContainer } from './context/AppContainer';
+import AppRefContainer from './ref/AppRefContainer';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
      <EffectCounter/>
      {/** useContext */}
      <AppContainer/>
+     {/** useRef */}
+     <AppRefContainer/>
     </div>
   );
 }

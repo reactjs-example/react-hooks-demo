@@ -30,7 +30,7 @@ export const EffectCounter = () => {
 
   return (
     <div>
-      Counter: {counter}
+      useEffect Counter: {counter}
       <button onClick={incrementCounter}>Increase</button>
     </div>
   );

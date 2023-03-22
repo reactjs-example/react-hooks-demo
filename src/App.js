@@ -6,6 +6,7 @@ import { EffectCounter } from './effect/Counter';
 import { AppContainer } from './context/AppContainer';
 import AppRefContainer from './ref/AppRefContainer';
 import AppCallbackHook from './callback/AppCallbackHook';
+import AppMemoHook from './memo/AppMemoHook';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
      <AppRefContainer/>
      {/** useCallback */}
      <AppCallbackHook/>
+     {/** useMemoHook */}
+     <AppMemoHook/>
     </div>
   );
 }

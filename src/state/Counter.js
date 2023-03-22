@@ -2,56 +2,21 @@ import React from "react";
 import { useState } from "react";
 
 export const Counter = () => {
-  const value = 0;
-  const increaseValue = () => {
-    value = value + 1;
+  const [count, setCount] = useState(10)
+  const increaseCounter = () => {
+    console.log(count);
+    setCount(count+1);
   };
-  const [counter, setCounter] = useState(0);
-  const [items, setItems] = useState([]);
-  const addItem = () => {
-    setItems((prevItems) => {
-      return [...prevItems, { id: items.length, key: Math.random() }];
-    });
-
-    // both of the logic works here but
-    // below may read the old value and 
-    // above line changes has not been added to ...items yet
-    setItems([...items, { id: items.length, key: Math.random() }])
-  };
+  const decreaseCounter = ()=>{
+    setCount(oldValue=>{return oldValue -1});
+  }
   return (
-    <div>
-      Counter: {value} - {counter}
-      <button
-        onClick={() => {
-          increaseValue();
-        }}
-      >
-        Increase
-      </button>
-      <button
-        onClick={() => {
-          setCounter(counter + 1);
-        }}
-      >
-        Increase
-      </button>
-      <button
-        onClick={() => {
-          setCounter((prevCounter) => prevCounter - 1);
-        }}
-      >
-        Decrease
-      </button>
-      <br />
-      <button onClick={addItem}>Add Item To Array</button>
-      {items.map((item) => (
-         // without above bracket ( we have to { return (<li>/li>)}
-          <li key={Math.random()}>
-            {item.id} {JSON.stringify(item)}
-          </li>
-    
-      ))}
-      <br />
-    </div>
+    <>
+      Counter : {count}
+      <button onClick={increaseCounter}>Increment</button>
+      <button onClick={decreaseCounter}>Decrement</button>
+      <button onClick={()=>{setCount(count-1)}}>Decrement</button>
+      <button onClick={()=>{setCount(oldValue=>{return oldValue-1})}}>Decrement</button>
+    </>
   );
 };

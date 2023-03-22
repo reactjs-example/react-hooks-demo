@@ -5,6 +5,7 @@ import { PersonSalaray } from './state/Salary';
 import { EffectCounter } from './effect/Counter';
 import { AppContainer } from './context/AppContainer';
 import AppRefContainer from './ref/AppRefContainer';
+import AppCallbackHook from './callback/AppCallbackHook';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
      <AppContainer/>
      {/** useRef */}
      <AppRefContainer/>
+     {/** useCallback */}
+     <AppCallbackHook/>
     </div>
   );
 }
